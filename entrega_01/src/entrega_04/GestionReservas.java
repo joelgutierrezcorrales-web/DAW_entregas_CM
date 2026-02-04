@@ -13,7 +13,6 @@ public class GestionReservas {
 
     private static Reserva[] reservas = new Reserva[30];
     private static int contador = 0;
-    private static int numReserva = 1;
 
     public static void main(String[] args) {
         boolean salir;
@@ -73,8 +72,7 @@ public class GestionReservas {
 
         String nombreCliente = sc.pideTexto("Ingresa el nombre del cliente: ");
 
-        String idReserva = "R" + numReserva ;
-        numReserva++;
+        String idReserva = "R" + (contador+1) ;
 
         if (contador < reservas.length) {
             reservas[contador] = new Reserva(fecha_creacion, tipo_reserva, nombreCliente, idReserva);
